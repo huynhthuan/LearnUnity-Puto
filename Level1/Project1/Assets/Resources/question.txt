@@ -1,0 +1,164 @@
+{
+    "listQuestion": [
+        {
+            "question": "Đâu là một loại hình chợ tạm tự phát thường xuất hiện trong các khu dân cư?",
+            "options": [
+                "Ếch",
+                "Cóc",
+                "Thằn Lằn",
+                "Nhái"
+            ],
+            "answers": 1
+        },
+        {
+            "question": "Đâu là tên một bãi biển ở Quảng Bình?",
+            "options": [
+                "Đá Lăn",
+                "Đá Nhảy",
+                "Đá Chạy",
+                "Đá Bò"
+            ],
+            "answers": 1
+        },
+        {
+            "question": "Haiku là thể thơ truyền thống của nước nào?",
+            "options": [
+                "Nhật Bản",
+                "Mông Cổ",
+                "Trung Quốc",
+                "Hàn Quốc"
+            ],
+            "answers": 0
+        },
+        {
+            "question": "Chiến trường Đắk Tô - Tân Cảnh, nơi diễn ra chiến thắng vang đội năm 1972, nay thuộc địa bàn tỉnh nào ở Tây Nguyên?",
+            "options": [
+                "Kon Tum",
+                "Đắk Lắk",
+                "Gia Lai",
+                "Đắk Nông"
+            ],
+            "answers": 0
+        },
+        {
+            "question": "Tượng đài Chiến thắng Điện Biên Phủ tại chiến trường xưa được dựng trên ngọn đồi nào?",
+            "options": [
+                "Đồi Him Lam",
+                "Đồi A1",
+                "Đồi C1",
+                "Đồi D1"
+            ],
+            "answers": 3
+        },
+        {
+            "question": "Đâu không phải là một tác phẩm của họa sĩ Trần Văn Cẩn?",
+            "options": [
+                "Đôi bạn",
+                "Mẹ",
+                "Em Thúy",
+                "Em gái tôi"
+            ],
+            "answers": 2
+        },
+        {
+            "question": "Nhà văn Kim Dung (Trung Quốc) nổi tiếng với thể loại văn học gì?",
+            "options": [
+                "Truyện trinh thám",
+                "Tiểu thuyết kiếm hiệp",
+                "Sử thi",
+                "Thơ lãng mạn"
+            ],
+            "answers": 1
+        },
+        {
+            "question": "Bộ phim \"Chị Dậu\" được chuyển thể từ tác phẩm nào?",
+            "options": [
+                "Người mẹ cầm súng",
+                "Vợ chồng A Phủ",
+                "Tắt đèn",
+                "Tuổi thơ dữ dội"
+            ],
+            "answers": 2
+        },
+        {
+            "question": "Cho tới thời điểm hiện nay, vườn quốc gia nào của nước ta chưa được công nhận là Vườn Di sản ASEAN?",
+            "options": [
+                "Vườn quốc gia Kon Ka Kinh",
+                "Vườn quốc gia Tam Đảo",
+                "Vườn quốc gia Chư Mom Ray",
+                "Vườn quốc gia Bái Tử Long"
+            ],
+            "answers": 1
+        },
+        {
+            "question": "Hoa hậu Hòa bình Quốc tế 2017 dự kiến sẽ được tổ chức tại quốc gia nào?",
+            "options": [
+                "Thái Lan",
+                "Việt Nam",
+                "Lào",
+                "Campuchia"
+            ],
+            "answers": 1
+        },
+        {
+            "question": "Giải Grand Slam đầu tiên trong năm là giải nào?",
+            "options": [
+                "Austrlia mở rộng",
+                "Wimbledon",
+                "Roland Garos",
+                "Mỹ mở rộng"
+            ],
+            "answers": 0
+        },
+        {
+            "question": "Hệ thống đô thị ở Việt Nam được phân thành mấy loại?",
+            "options": [
+                "3",
+                "4",
+                "5",
+                "6"
+            ],
+            "answers": 3
+        },
+        {
+            "question": "Cầu thủ nào đạt danh hiệu Quả bóng vàng Việt Nam năm 2010?",
+            "options": [
+                "Minh Phương",
+                "Vũ Phong",
+                "Tấn Trường",
+                "Trọng Hoàng"
+            ],
+            "answers": 0
+        },
+        {
+            "question": "Cơ quan nào sau đây dự trữ tỉ lệ glycogen cao nhất so với tỉ trọng của nó?",
+            "options": [
+                "Cơ",
+                "Não",
+                "Gan",
+                "Mô mỡ"
+            ],
+            "answers": 2
+        },
+        {
+            "question": "Ca khúc nào đạt giải thưởng Bài hát Việt của năm 2010?",
+            "options": [
+                "Việt Nam",
+                "Chênh vênh",
+                "Chuông gió",
+                "Đồng hồ treo tường"
+            ],
+            "answers": 0
+        },
+        {
+            "question": "AFC Asian Cup 2011 được tổ chức tại quốc gia nào?",
+            "options": [
+                "Qatar",
+                "Hàn Quốc",
+                "Nhật Bản",
+                "Iraq"
+            ],
+            "answers": 0
+        }
+    ]
+}
