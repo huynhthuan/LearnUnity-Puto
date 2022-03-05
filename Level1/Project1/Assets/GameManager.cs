@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour
     public GameObject btnQuestionC;
     public GameObject btnQuestionD;
     public GameObject timeCoundown;
+    public GameObject popupLose;
+    public GameObject popupWin;
 
     [HideInInspector]
     public float timeRemaining = 16;
@@ -47,9 +49,7 @@ public class GameManager : MonoBehaviour
     {
         // Set question list from text
         myQuestion = JsonUtility.FromJson<QuestionList>(TextQuestions.text);
-        // Set current question
-        setStateQuestion(1);
-        timerIsRunning = true;
+        newGame();
     }
 
     // Update is called once per frame
@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Set state");
         Debug.Log(indexQuestion);
         currentQuestion = indexQuestion;
-        setCurrentQuestionInPanel(15 - indexQuestion);
+        setCurrentQuestionInPanel(14 - indexQuestion);
     }
 
     void setCurrentQuestionInPanel(int index)
@@ -87,26 +87,34 @@ public class GameManager : MonoBehaviour
         GameObject child = questionPanel.transform.GetChild(index).gameObject;
         Text txt = child.GetComponent<Text>();
         txt.color = Color.green;
-        setMainQuestion(index);
-        setAnswer(index);
+        setMainQuestion();
+        setAnswer();
     }
 
-    void setMainQuestion(int index)
+    void resetQuestionHighLight()
+    {
+        foreach (Transform child in questionPanel.transform)
+        {
+            child.GetComponent<Text>().color = new Color(154, 150, 150);
+        }
+    }
+
+    void setMainQuestion()
     {
         Text txtMain = mainQuestionText.GetComponent<Text>();
-        txtMain.text = myQuestion.listQuestion[index].question;
+        txtMain.text = myQuestion.listQuestion[currentQuestion].question;
     }
 
-    void setAnswer(int questinIndex)
+    void setAnswer()
     {
         Text answerA = btnQuestionA.GetComponent<Text>();
-        answerA.text = "A. " + myQuestion.listQuestion[questinIndex].options[0];
+        answerA.text = "A. " + myQuestion.listQuestion[currentQuestion].options[0];
         Text answerB = btnQuestionB.GetComponent<Text>();
-        answerB.text = "B. " + myQuestion.listQuestion[questinIndex].options[1];
+        answerB.text = "B. " + myQuestion.listQuestion[currentQuestion].options[1];
         Text answerC = btnQuestionC.GetComponent<Text>();
-        answerC.text = "C. " + myQuestion.listQuestion[questinIndex].options[2];
+        answerC.text = "C. " + myQuestion.listQuestion[currentQuestion].options[2];
         Text answerD = btnQuestionD.GetComponent<Text>();
-        answerD.text = "D. " + myQuestion.listQuestion[questinIndex].options[3];
+        answerD.text = "D. " + myQuestion.listQuestion[currentQuestion].options[3];
     }
 
     void displayTime(float timeRemaining)
@@ -116,21 +124,98 @@ public class GameManager : MonoBehaviour
 
     void checkAnswer()
     {
+        Debug.Log("My answer " + answerSelect);
+
         if (myQuestion.listQuestion[currentQuestion].answers == answerSelect)
         {
             Debug.Log("Correct");
+            showCorrectAnswer();
+            nextQuestion();
         }
         else
         {
             Debug.Log("In Correct");
-            nextQuestion();
+            showCorrectAnswer();
+            enablePopupLose();
         }
     }
 
     void nextQuestion()
     {
-        setStateQuestion(++currentQuestion);
+        if (currentQuestion + 1 > 14)
+        {
+            enablePopupWin();
+        }
+        else
+        {
+            answerSelect = -1;
+            setStateQuestion(++currentQuestion);
+            timeRemaining = 16;
+            timerIsRunning = true;
+            enableInteractable();
+        }
+    }
+
+    public void onClickAnswer(int answerIndex)
+    {
+        answerSelect = answerIndex;
+    }
+
+    void showCorrectAnswer()
+    {
+        switch (myQuestion.listQuestion[currentQuestion].answers)
+        {
+            case 0:
+                btnQuestionA.transform.parent.GetComponent<Button>().interactable = false;
+                break;
+            case 1:
+                btnQuestionB.transform.parent.GetComponent<Button>().interactable = false;
+                break;
+            case 2:
+                btnQuestionC.transform.parent.GetComponent<Button>().interactable = false;
+                break;
+            case 3:
+                btnQuestionD.transform.parent.GetComponent<Button>().interactable = false;
+                break;
+        }
+    }
+
+    void enableInteractable()
+    {
+        btnQuestionA.transform.parent.GetComponent<Button>().interactable = true;
+        btnQuestionB.transform.parent.GetComponent<Button>().interactable = true;
+        btnQuestionC.transform.parent.GetComponent<Button>().interactable = true;
+        btnQuestionD.transform.parent.GetComponent<Button>().interactable = true;
+    }
+
+    public void newGame()
+    {
+        answerSelect = -1;
         timeRemaining = 16;
         timerIsRunning = true;
+        enableInteractable();
+        disablePopupLose();
+        disablePopupWin();
+        resetQuestionHighLight();
+        setStateQuestion(0);
+    }
+
+    void disablePopupLose()
+    {
+        popupLose.SetActive(false);
+    }
+
+    void enablePopupLose()
+    {
+        popupLose.SetActive(true);
+    }
+    void disablePopupWin()
+    {
+        popupWin.SetActive(false);
+    }
+
+    void enablePopupWin()
+    {
+        popupWin.SetActive(true);
     }
 }
